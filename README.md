@@ -17,7 +17,7 @@
 ## Overview :writing_hand:
 
 Todo app allows you to create task lists and save a backup of the data thanks to a REST API that connects to a MongoDB database. As a user, you can list, create, edit, and delete tasks and keep an eye on them.
-The application connects to a backend API developed in Express with Typescript to handle data. This repository contains the frontend structure. Here is the link to the backend repository: [Backend Repository](https://github.com/Cristianjs93/todo-api), and the link to the deployed application on Vercel: [Deployed Project]()."
+The application connects to a backend API developed in Express with Typescript to handle data. This repository contains the frontend structure. Here is the link to the backend repository: [Backend Repository](https://github.com/Cristianjs93/todo-api), and the link to the deployed application on Vercel: [Deployed Project](https://nuawi-todo-app.vercel.app/)."
 
 ### Installation :gear:
 
