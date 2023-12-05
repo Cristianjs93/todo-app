@@ -1,0 +1,8 @@
+@mixin buttons($background-color: var(--accept-button)) {
+  padding: 10px;
+  color: var(--button-font);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: $background-color;
+}

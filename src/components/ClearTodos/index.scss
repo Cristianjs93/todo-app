@@ -1,0 +1,10 @@
+@import '../../styles/mixins.scss';
+
+.clear-box {
+  width: fit-content;
+  margin: 0 auto;
+
+  &__button {
+    @include buttons($background-color: var(--cancel-button));
+  }
+}
