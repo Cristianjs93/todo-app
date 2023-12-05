@@ -10,11 +10,14 @@ function TodosList() {
 
   const [openModal, setOpenModal] = useState(false);
   const [todoId, setTodoId] = useState('');
+  const [change, setChange] = useState(true);
 
   useEffect(() => {
     dispatch(listTodos());
   }, []);
-
+  useEffect(() => {
+    dispatch(listTodos());
+  }, [change]);
   const handleOpenModal = (event) => {
     if (!openModal) {
       const { id } = event.target;
@@ -26,6 +29,7 @@ function TodosList() {
   const handleChange = (event) => {
     const { id } = event.target;
     dispatch(modifyTodo(id));
+    setChange(!change);
   };
 
   return (
