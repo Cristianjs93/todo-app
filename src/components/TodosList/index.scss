@@ -41,6 +41,14 @@
     text-align: start;
   }
 
+  &__red {
+    color: var(--cancel-button);
+  }
+
+  &__green {
+    color: var(--accept-button);
+  }
+
   &__button-trash {
     border: none;
     background-color: transparent;

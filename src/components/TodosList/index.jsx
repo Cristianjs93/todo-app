@@ -42,7 +42,9 @@ function TodosList() {
               onChange={handleChange}
             />
             <h2 className="todos-container__title">{todo.title}</h2>
-            <span>{todo.completed === false ? 'Pending' : 'Completed'}</span>
+            <span className={!todo.completed ? 'todos-container__red' : 'todos-container__green'}>
+              {!todo.completed ? 'Pending' : 'Completed'}
+            </span>
             <button
               type="button"
               className="todos-container__button-trash"
