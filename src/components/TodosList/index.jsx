@@ -15,7 +15,7 @@ function TodosList() {
   return (
     <div className="todos-container">
       <ul className="todos-container__list">
-        {todos.map((todo) => (
+        {!!todos && todos.map((todo) => (
           <TodoItem key={todo._id} todo={todo} />
         ))}
       </ul>

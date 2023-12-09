@@ -23,10 +23,11 @@ export const listTodos = createAsyncThunk(
       const { data } = await getAllTodos();
       return data;
     } catch (error) {
-      return toast.fire({
+      toast.fire({
         icon: 'error',
         title: error.message,
       });
+      throw new Error(error.message);
     }
   },
 );
@@ -46,10 +47,11 @@ export const addTodo = createAsyncThunk(
 
       return data;
     } catch (error) {
-      return toast.fire({
+      toast.fire({
         icon: 'error',
         title: error.message,
       });
+      throw new Error(error.message);
     }
   },
 );
@@ -69,10 +71,11 @@ export const modifyTodo = createAsyncThunk(
 
       return data;
     } catch (error) {
-      return toast.fire({
+      toast.fire({
         icon: 'error',
         title: error.message,
       });
+      throw new Error(error.message);
     }
   },
 );
@@ -92,10 +95,11 @@ export const removeTodo = createAsyncThunk(
 
       return data;
     } catch (error) {
-      return toast.fire({
+      toast.fire({
         icon: 'error',
         title: error.message,
       });
+      throw new Error(error.message);
     }
   },
 );
@@ -115,10 +119,11 @@ export const clearCompletedTodos = createAsyncThunk(
 
       return data;
     } catch (error) {
-      return toast.fire({
+      toast.fire({
         icon: 'error',
         title: error.message,
       });
+      throw new Error(error.message);
     }
   },
 );
