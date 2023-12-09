@@ -1,0 +1,21 @@
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  &__title {
+    min-width: 60%;
+    text-align: start;
+  }
+
+  &__status {
+    &--red {
+      color: var(--cancel-button);
+    }
+
+    &--green {
+      color: var(--accept-button);
+    }
+  }
+}
