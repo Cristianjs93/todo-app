@@ -55,7 +55,7 @@ export const addTodo = createAsyncThunk(
 );
 
 export const modifyTodo = createAsyncThunk(
-  'todos/updateTodo',
+  'todos/modifyTodo',
   async (id) => {
     try {
       const { message, data } = await updateTodo(id);
@@ -101,7 +101,7 @@ export const removeTodo = createAsyncThunk(
 );
 
 export const clearCompletedTodos = createAsyncThunk(
-  'todos/removeManyTodo',
+  'todos/clearCompletedTodos',
   async (completedIds) => {
     try {
       const { message, data } = await deleteManyTodo(completedIds);
@@ -142,7 +142,8 @@ const todosSlice = createSlice({
       .addCase(addTodo.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(addTodo.fulfilled, (state) => {
+      .addCase(addTodo.fulfilled, (state, { payload }) => {
+        state.todos = payload._id ? [...state.todos, payload] : state.todos;
         state.status = 'idle';
       })
       .addCase(addTodo.rejected, (state, { error }) => {
@@ -152,7 +153,11 @@ const todosSlice = createSlice({
       .addCase(modifyTodo.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(modifyTodo.fulfilled, (state) => {
+      .addCase(modifyTodo.fulfilled, (state, { payload }) => {
+        state.todos = state.todos.map((todo) => (todo._id === payload._id
+          ? { ...todo, completed: payload.completed }
+          : todo
+        ));
         state.status = 'idle';
       })
       .addCase(modifyTodo.rejected, (state, { error }) => {
@@ -162,7 +167,8 @@ const todosSlice = createSlice({
       .addCase(removeTodo.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(removeTodo.fulfilled, (state) => {
+      .addCase(removeTodo.fulfilled, (state, { payload }) => {
+        state.todos = state.todos.filter((todo) => todo._id !== payload._id);
         state.status = 'idle';
       })
       .addCase(removeTodo.rejected, (state, { error }) => {
@@ -172,7 +178,10 @@ const todosSlice = createSlice({
       .addCase(clearCompletedTodos.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(clearCompletedTodos.fulfilled, (state) => {
+      .addCase(clearCompletedTodos.fulfilled, (state, { payload }) => {
+        state.todos = state.todos.filter((todo) => (payload.completedIds.includes(todo._id)
+          ? null
+          : todo));
         state.status = 'idle';
       })
       .addCase(clearCompletedTodos.rejected, (state, { error }) => {

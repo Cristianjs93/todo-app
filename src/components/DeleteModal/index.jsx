@@ -4,11 +4,11 @@ import { useDispatch } from 'react-redux';
 import { removeTodo } from '../../../store/redux/slices/todosSlice';
 import './index.scss';
 
-function DeleteModal({ todoId, onOpenModal }) {
+function DeleteModal({ id, onOpenModal }) {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
-    dispatch(removeTodo(todoId));
+    dispatch(removeTodo(id));
     onOpenModal();
   };
 
@@ -38,7 +38,7 @@ function DeleteModal({ todoId, onOpenModal }) {
 }
 
 DeleteModal.propTypes = {
-  todoId: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   onOpenModal: PropTypes.func.isRequired,
 };
 

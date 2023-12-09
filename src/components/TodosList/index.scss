@@ -9,50 +9,5 @@
     flex-direction: column;
     gap: 20px;
     list-style: none;
-
-    &__item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-    }
-  }
-
-  &__check {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background-color: rgb(226, 222, 222);
-    cursor: pointer;
-  }
-
-  &__check:checked::before {
-    content: '\2713';
-    display: block;
-    text-align: center;
-    line-height: 20px;
-    font-weight: 900;
-    color: var(--button-font);
-    border: none;
-    background-color: var(--accept-button);
-  }
-
-  &__title {
-    min-width: 60%;
-    text-align: start;
-  }
-
-  &__red {
-    color: var(--cancel-button);
-  }
-
-  &__green {
-    color: var(--accept-button);
-  }
-
-  &__button-trash {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
   }
 }
