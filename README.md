@@ -44,7 +44,7 @@ cd todo-app
 4. Create the .env file at the root of the project and define the environment variables (refer to the .env.example file for guidance):
 
 ```shell
-VITE_BASE_URL=https://todo-api-2s3k.onrender.com
+VITE_BASE_URL=http://localhost:8080
 ```
 
 5. Start the application:
@@ -55,13 +55,13 @@ VITE_BASE_URL=https://todo-api-2s3k.onrender.com
 
 ### Screenshot 📷
 
-![Alt text](image.png)
+![Alt text](/public/readme-1.png)
 <br/>
 <br/>
-![Alt text](image-1.png)
+![Alt text](/public/readme-2.png)
 <br/>
 <br/>
-![Alt text](image-2.png)
+![Alt text](/public/readme-3.png)
 
 ## My Process 🏗️
 

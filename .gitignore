@@ -1,3 +1,6 @@
+# misc
+.env
+
 # Logs
 logs
 *.log
@@ -24,4 +27,4 @@ dist-ssr
 *.sw?
 
 # Editor directories and files
-.env
+
